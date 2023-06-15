@@ -30,23 +30,29 @@ struct MissionView: View {
                     Text(mission.formattedLaunchDate)
                         .font(.title3)
                         .foregroundColor(.white)
-                                        
+                    
                     VStack(alignment: .leading) {
+                        BreakView()
+                    /*
                         Rectangle()
                             .frame(height: 2)
                             .foregroundColor(.lightBackground)
                             .padding(.vertical)
-                        
+                     */
+                     
                         Text("Mission Highlights")
                             .font(.title.bold())
                             .padding(.bottom, 5)
                         
                         Text(mission.description)
                         
+                        BreakView()
+                    /*
                         Rectangle()
                             .frame(height: 2)
                             .foregroundColor(.lightBackground)
                             .padding(.vertical)
+                     */
                     
                         Text("Crew")
                             .font(.title.bold())
@@ -54,6 +60,8 @@ struct MissionView: View {
                     }
                     .padding(.horizontal)
                     
+                    HorizontalScrollView(crew: crew)
+                    /* replaced with HorizontalScrollView
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(crew, id: \.role) { crewMember in
@@ -82,7 +90,7 @@ struct MissionView: View {
                                 }
                             }
                         }
-                    }
+                    } */
                 }
                 .padding(.bottom)
             }
